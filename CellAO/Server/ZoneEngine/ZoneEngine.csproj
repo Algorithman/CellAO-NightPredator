@@ -42,10 +42,6 @@
       <HintPath>..\..\packages\MemBus.2.0.2\lib\Net40-Client\MemBus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MsgPack, Version=0.4.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\MsgPack.Cli.0.4.0\lib\net40-client\MsgPack.dll</HintPath>
-    </Reference>
     <Reference Include="NBug">
       <HintPath>..\..\packages\NBug.1.1.1\lib\net40-client\NBug.dll</HintPath>
     </Reference>
@@ -145,6 +141,10 @@
     <ProjectReference Include="..\..\Libraries\Source\CellAO.Stats\CellAO.Stats.csproj">
       <Project>{3e414ed6-3cad-4c99-a35d-1802255de3cb}</Project>
       <Name>CellAO.Stats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Source\MessagePack\src\MsgPack.Mono\MsgPack.Mono.csproj">
+      <Project>{6e8c2296-21e9-4113-89c4-76376516aa14}</Project>
+      <Name>MsgPack.Mono</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Source\NiceHexOutput\NiceHexOutput.csproj">
       <Project>{2ea014b6-1118-4ad0-8602-33d476efdd24}</Project>

@@ -3,4 +3,4 @@
 	url = https://github.com/SmokeLounge/AOtomation.Messaging.git
 [submodule "CellAO/Libraries/Source/MessagePack"]
 	path = CellAO/Libraries/Source/MessagePack
-	url = https://github.com/msgpack/msgpack-cli
+	url = https://github.com/msgpack/msgpack-cli.git

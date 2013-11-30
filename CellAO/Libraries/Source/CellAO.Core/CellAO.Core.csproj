@@ -177,6 +177,7 @@
     <ProjectReference Include="..\MessagePack\src\MsgPack.Mono\MsgPack.Mono.csproj">
       <Project>{6e8c2296-21e9-4113-89c4-76376516aa14}</Project>
       <Name>MsgPack.Mono</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Translations\Translations.csproj">
       <Project>{3c59fd3d-2a73-4450-b4a3-1de0f771ecec}</Project>
       <Name>Translations</Name>

@@ -42,10 +42,6 @@
       <HintPath>..\..\packages\MemBus.2.0.2\lib\Net40-Client\MemBus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MsgPack, Version=0.4.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\MsgPack.Cli.0.4.0\lib\net40-client\MsgPack.dll</HintPath>
-    </Reference>
     <Reference Include="NBug, Version=1.2.0.0, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NBug.1.2.2\lib\net40-client\NBug.dll</HintPath>
@@ -154,6 +150,10 @@
     <ProjectReference Include="..\..\Libraries\Source\Exceptions\Exceptions.csproj">
       <Project>{ddd3b520-1f43-4eef-a2a9-fc621424090a}</Project>
       <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Source\MessagePack\src\MsgPack.Mono\MsgPack.Mono.csproj">
+      <Project>{6e8c2296-21e9-4113-89c4-76376516aa14}</Project>
+      <Name>MsgPack.Mono</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Libraries\Source\NiceHexOutput\NiceHexOutput.csproj">
       <Project>{2ea014b6-1118-4ad0-8602-33d476efdd24}</Project>

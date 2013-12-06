@@ -24,90 +24,60 @@
 
 #endregion
 
-namespace CellAO.Core.Events
-
+namespace CellAO.Stats.SpecialStats
 {
     #region Usings ...
 
     using System;
-    using System.Collections.Generic;
 
-    using CellAO.Core.Functions;
+    using CellAO.Enums;
 
     #endregion
 
     /// <summary>
     /// </summary>
-    [Serializable]
-    public class Events : IEvents
+    public class StatCurrentNano : Stat
     {
-        #region Fields
+        #region Constructors and Destructors
 
         /// <summary>
-        /// Type of the Event (constants in ItemLoader)
         /// </summary>
-        private int eventType;
-
-        /// <summary>
-        /// List of Functions of the Event
-        /// </summary>
-        private List<Functions> functions = new List<Functions>();
-
-        #endregion
-
-        #region Public Properties
-
-        /// <summary>
-        /// Type of the Event (constants in ItemLoader)
-        /// </summary>
-        public int EventType
+        /// <param name="statList">
+        /// </param>
+        /// <param name="number">
+        /// </param>
+        /// <param name="defaultValue">
+        /// </param>
+        /// <param name="sendBaseValue">
+        /// </param>
+        /// <param name="dontWrite">
+        /// </param>
+        /// <param name="announceToPlayfield">
+        /// </param>
+        public StatCurrentNano(
+            Stats statList, 
+            int number, 
+            uint defaultValue, 
+            bool sendBaseValue, 
+            bool dontWrite, 
+            bool announceToPlayfield)
+            : base(statList, number, defaultValue, sendBaseValue, dontWrite, announceToPlayfield)
         {
-            get
-            {
-                return this.eventType;
-            }
-
-            set
-            {
-                this.eventType = value;
-            }
-        }
-
-        /// <summary>
-        /// List of Functions of the Event
-        /// </summary>
-        public List<Functions> Functions
-        {
-            get
-            {
-                return this.functions;
-            }
-
-            set
-            {
-                this.functions = value;
-            }
         }
 
         #endregion
 
-        #region Methods
+        #region Public Methods and Operators
 
         /// <summary>
         /// </summary>
+        /// <param name="val">
+        /// </param>
         /// <returns>
         /// </returns>
-        internal Events Copy()
+        public override uint GetMaxValue(uint val)
         {
-            Events copy = new Events();
-
-            copy.EventType = this.EventType;
-            foreach (Functions functions in this.Functions)
-            {
-                copy.Functions.Add(functions.Copy());
-            }
-
-            return copy;
+            return (uint)Math.Min(val, this.Stats[StatIds.maxnanoenergy].Value);
         }
 
         #endregion

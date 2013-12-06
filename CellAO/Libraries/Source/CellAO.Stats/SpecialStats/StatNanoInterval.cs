@@ -24,90 +24,64 @@
 
 #endregion
 
-namespace CellAO.Core.Events
-
+namespace CellAO.Stats.SpecialStats
 {
     #region Usings ...
 
     using System;
-    using System.Collections.Generic;
 
-    using CellAO.Core.Functions;
+    using CellAO.Enums;
 
     #endregion
 
     /// <summary>
     /// </summary>
-    [Serializable]
-    public class Events : IEvents
+    public class StatNanoInterval : Stat
     {
-        #region Fields
+        #region Constructors and Destructors
 
         /// <summary>
-        /// Type of the Event (constants in ItemLoader)
         /// </summary>
-        private int eventType;
-
-        /// <summary>
-        /// List of Functions of the Event
-        /// </summary>
-        private List<Functions> functions = new List<Functions>();
+        /// <param name="statList">
+        /// </param>
+        /// <param name="number">
+        /// </param>
+        /// <param name="defaultValue">
+        /// </param>
+        /// <param name="sendBaseValue">
+        /// </param>
+        /// <param name="dontWrite">
+        /// </param>
+        /// <param name="announceToPlayfield">
+        /// </param>
+        public StatNanoInterval(
+            Stats statList, 
+            int number, 
+            uint defaultValue, 
+            bool sendBaseValue, 
+            bool dontWrite, 
+            bool announceToPlayfield)
+            : base(statList, number, defaultValue, sendBaseValue, dontWrite, announceToPlayfield)
+        {
+        }
 
         #endregion
 
         #region Public Properties
 
         /// <summary>
-        /// Type of the Event (constants in ItemLoader)
         /// </summary>
-        public int EventType
+        public override uint BaseValue
         {
             get
             {
-                return this.eventType;
+                return (uint)(28 - (Math.Min(this.Stats[StatIds.psychic].Value / 60, 13) * 2));
             }
 
             set
             {
-                this.eventType = value;
+                base.BaseValue = value;
             }
-        }
-
-        /// <summary>
-        /// List of Functions of the Event
-        /// </summary>
-        public List<Functions> Functions
-        {
-            get
-            {
-                return this.functions;
-            }
-
-            set
-            {
-                this.functions = value;
-            }
-        }
-
-        #endregion
-
-        #region Methods
-
-        /// <summary>
-        /// </summary>
-        /// <returns>
-        /// </returns>
-        internal Events Copy()
-        {
-            Events copy = new Events();
-
-            copy.EventType = this.EventType;
-            foreach (Functions functions in this.Functions)
-            {
-                copy.Functions.Add(functions.Copy());
-            }
-
-            return copy;
         }
 
         #endregion

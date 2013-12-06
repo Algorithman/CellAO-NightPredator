@@ -41,6 +41,9 @@
     <Reference Include="MemBus">
       <HintPath>..\..\..\packages\MemBus.2.0.2\lib\Net40-Client\MemBus.dll</HintPath>
     </Reference>
+    <Reference Include="MsgPack">
+      <HintPath>..\..\..\packages\MsgPack.Cli.0.4.0\lib\net40-client\MsgPack.dll</HintPath>
+    </Reference>
     <Reference Include="NLog">
       <HintPath>..\..\..\packages\NLog.2.1.0\lib\net40\NLog.dll</HintPath>
     </Reference>
@@ -134,6 +137,7 @@
     <Compile Include="Playfields\PlayfieldDistrict.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requirements\IRequirements.cs" />
+    <Compile Include="Requirements\RequirementLambdaCreator.cs" />
     <Compile Include="Requirements\Requirements.cs" />
     <Compile Include="Textures\AOMeshs.cs" />
     <Compile Include="Textures\AOTextures.cs" />
@@ -173,10 +177,6 @@
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{ddd3b520-1f43-4eef-a2a9-fc621424090a}</Project>
       <Name>Exceptions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MessagePack\src\MsgPack.Mono\MsgPack.Mono.csproj">
-      <Project>{6e8c2296-21e9-4113-89c4-76376516aa14}</Project>
-      <Name>MsgPack.Mono</Name>
     </ProjectReference>
     <ProjectReference Include="..\Translations\Translations.csproj">
       <Project>{3c59fd3d-2a73-4450-b4a3-1de0f771ecec}</Project>

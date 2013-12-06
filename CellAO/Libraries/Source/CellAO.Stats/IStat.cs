@@ -103,5 +103,7 @@ namespace CellAO.Stats
         uint GetMaxValue(uint old);
 
         #endregion
+
+        void SetBaseValue(uint value);
     }
 }
